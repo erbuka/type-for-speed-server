@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?><!-- Generator: Gravit.io -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 237.017 117.965" width="237.017" height="117.965">
+    <defs>
+        <clipPath id="_clipPath_joOhHmxMkJj0yF8Icg5JcL56PPRX0uj0">
+            <rect width="237.017" height="117.965"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#_clipPath_joOhHmxMkJj0yF8Icg5JcL56PPRX0uj0)">
+        <clipPath id="_clipPath_Gw4TPbDByMNZtprsncnNgIMvLifrrT4H">
+            <rect x="0" y="0" width="237.017" height="117.965" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+        </clipPath>
+        <g clip-path="url(#_clipPath_Gw4TPbDByMNZtprsncnNgIMvLifrrT4H)">
+            <g>
+                <path id="body" d=" M 179 99.965 L 64 99.965 Q 56.972 70.776 32 71.965 Q 18 72.631 13 87.965 L 0 87.965 Q 1.667 58.631 10 51.965 C 18.333 45.298 40.667 8.631 51 4.965 C 61.333 1.298 120.333 -2.369 145 1.965 Q 152.804 3.336 167.086 27.965 Q 172.078 34.629 181 37.965 C 194.429 42.986 224.667 41.965 231 55.965 Q 237.333 69.965 237 91.965 L 231 91.965 Q 225.333 72.965 206 71.965 Q 186.667 70.965 181 91.965 L 179 99.965 Z " fill="rgb(255,0,0)"/>
+                <path d=" M 227 96.965 C 227 85.374 217.59 75.965 206 75.965 C 194.41 75.965 185 85.374 185 96.965 C 185 108.555 194.41 117.965 206 117.965 C 217.59 117.965 227 108.555 227 96.965 Z  M 57 96.965 C 57 85.374 47.59 75.965 36 75.965 C 24.41 75.965 15 85.374 15 96.965 C 15 108.555 24.41 117.965 36 117.965 C 47.59 117.965 57 108.555 57 96.965 Z " fill-rule="evenodd" fill="rgb(0,0,0)"/>
+                <path d=" M 44 35.965 Q 50 19.298 59 14.965 Q 68 10.631 85 10.965 L 82 35.965 L 44 35.965 Z " fill="rgb(0,0,0)"/>
+                <path d=" M 96 35.965 L 163 35.965 Q 152.75 17.465 144 12.965 C 135.25 8.465 108.25 8.965 98 10.965 Q 96.749 11.209 96 35.965 Z " fill="rgb(0,0,0)"/>
+            </g>
+        </g>
+    </g>
+</svg>

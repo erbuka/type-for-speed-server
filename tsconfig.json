@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "build",
+        "lib": [
+            "es6"
+        ]
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}

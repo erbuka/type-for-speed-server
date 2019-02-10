@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300"/>
+    <style>
+        body,html{
+            font-family: 'Roboto', sans-serif;
+        }
+        .display-1,.display-2,.display-3,.display-4 {
+            font-weight: 100;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-light">
+    <div class="container">
+        <div class="display-4 mt-4 mb-2">Type for Speed - Server Admin</div>
+        <div class="my-3">
+            Service is
+            <span class="<%=server.isRunning ? 'text-success' : 'text-danger'%>">
+                <%=server.isRunning ? 'RUNNING' : 'STOPPED'%>
+            </span>
+        </div>
+        <table class="table table-dark mb-2">
+            <tr>
+                <th>Property</th>
+                <th class="text-right">Value</th>
+            </tr>
+            <tr>
+                <td>Connected clients</td>
+                <td class="text-right"><%=server.clients.size%></td>
+            </tr>
+            <tr>
+                <td>Open rooms</td>
+                <td class="text-right"><%=server.rooms.size%></td>
+            </tr>
+            <tr>
+                <td>Active sockets connections</td>
+                <td class="text-right"><%=server._wsServer ? server._wsServer.clients.size : "N/A" %></td>
+            </tr>            
+        </table>
+        <div class="mb-2">
+            <a href="/admin/restart"><button class="btn btn-primary">Restart</button></a>
+            <a href="/admin/stop"><button class="btn btn-primary" <%=!server.isRunning? 'disabled':''%>>Stop</button></a>
+        </div>
+    </div>
+</body>
+
+</html>
