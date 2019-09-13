@@ -77,5 +77,5 @@ class TOSRoom {
         return Array.from(this.clients.values());
     }
 }
-exports.TOSRoom = TOSRoom;
 TOSRoom._uidGen = new uid_1.UID(16);
+exports.TOSRoom = TOSRoom;

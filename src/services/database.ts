@@ -25,7 +25,7 @@ export class DB {
                     resolve();
                 },
                 autosave: true,
-                autosaveInterval: 1000
+                autosaveInterval: 10000
             });
         });
     }

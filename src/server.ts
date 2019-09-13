@@ -8,7 +8,6 @@ import { TOSMatchMaker } from './matchmaker';
 import { TOSClient } from './client';
 import { TextBroker } from './services/text-broker';
 import { DB } from './services/database';
-import { Cars } from './services/cars';
 import { ColorPalette } from './services/color-palette';
 import { TOSGame, EGameType } from './game';
 
@@ -87,7 +86,6 @@ export class TOSServer {
 
         await TextBroker.initialize();
         await DB.initialize();
-        await Cars.initialize();
         await ColorPalette.initialize();
 
         this._wsServer = new WebSocket.Server({ server: this._httpServer });
@@ -185,15 +183,9 @@ export class TOSServer {
 
 
             if (data.color && typeof data.color === "string") {
-                if (client.profile.unlockedColors.indexOf(data.color) == -1)
-                    throw ("Color is locked");
+                if (ColorPalette.colors.indexOf(data.color) == -1)
+                    throw ("Not a valid color");
                 responseData.color = data.color;
-            }
-
-            if (data.carModel && typeof data.carModel === "string") {
-                if (client.profile.unlockedCars.indexOf(data.carModel) == -1)
-                    throw ("Car is locked");
-                responseData.carModel = data.carModel;
             }
 
             if (data.displayName && typeof data.displayName === "string") {
@@ -315,7 +307,6 @@ export class TOSServer {
             data: <IConnectedResponseData>{
                 id: client.id,
                 profile: client.profile,
-                carModelsPool: Cars.models,
                 colorPalette: ColorPalette.colors
             }
         });

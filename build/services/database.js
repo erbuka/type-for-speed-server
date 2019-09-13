@@ -18,10 +18,10 @@ class DB {
                     resolve();
                 },
                 autosave: true,
-                autosaveInterval: 1000
+                autosaveInterval: 10000
             });
         });
     }
 }
-exports.DB = DB;
 DB._db = null;
+exports.DB = DB;

@@ -47,7 +47,7 @@ export interface IResponse {
     type: EResponseType;
     data: IConnectedResponseData | IRoomInfoResponseData | IErrorResponseData | IGameInfoResponseData |
     IGameMessageResponseData | IGameUpdatePlayerResponseData | IGameScoreResponseData | IGameStateUpdateResponseData |
-    IFindMatchInfo | IProfileUpdatedResponseData
+    IProfileUpdatedResponseData
 }
 
 /* Common */
@@ -62,9 +62,6 @@ export interface IProfile {
     color: string;
     avatar: string;
     facebookId: string;
-    carModel: string;
-    unlockedCars: string[];
-    unlockedColors: string[];
 
     statsTotalGamesPlayed: number;
     statsBestWPM: number;
@@ -93,7 +90,6 @@ export interface ICreateRoomRequestData {
 export interface IUpdateProfileRequestData {
     displayName?: string;
     color?: string;
-    carModel?: string;
 }
 
 /* Responses */
@@ -103,7 +99,6 @@ export type IProfileUpdatedResponseData = IProfileOptional;
 export interface IConnectedResponseData {
     id: string;
     profile: IProfile;
-    carModelsPool: string[];
     colorPalette: string[];
 }
 
@@ -129,7 +124,6 @@ export interface IGameInfoResponseData {
         name: string,
         color: string,
         avatar: string,
-        carModel: string,
         position: number
     }[];
     text: string[],
@@ -160,6 +154,3 @@ export interface IGameMessageResponseData {
     durationMillis: number;
 }
 
-export interface IFindMatchInfo {
-
-}

@@ -4,7 +4,6 @@ const uid_1 = require("./util/uid");
 const com_interface_1 = require("./com-interface");
 const database_1 = require("./services/database");
 const color_palette_1 = require("./services/color-palette");
-const cars_1 = require("./services/cars");
 const name_generator_1 = require("./util/name-generator");
 class TOSClient {
     constructor(connection) {
@@ -21,9 +20,6 @@ class TOSClient {
                 avatar: this._profileInternal.avatar,
                 color: this._profileInternal.color,
                 facebookId: this._profileInternal.facebookId,
-                carModel: this._profileInternal.carModel,
-                unlockedCars: this._profileInternal.unlockedCars.slice(0),
-                unlockedColors: this._profileInternal.unlockedColors.slice(0),
                 statsTotalGamesPlayed: this._profileInternal.statsTotalGamesPlayed,
                 statsBestWPM: this._profileInternal.statsBestWPM
             };
@@ -90,19 +86,15 @@ class TOSClient {
         return `${this.id}:${this.profile.displayName}`;
     }
     static createDefaultProfile(r) {
-        let unlockedColors = color_palette_1.ColorPalette.colors.slice(0);
         return {
             facebookId: r.facebookId,
             displayName: name_generator_1.NameGenerator.generate(),
             avatar: r.avatar,
-            color: unlockedColors[Math.floor(Math.random() * unlockedColors.length)],
-            carModel: cars_1.Cars.models[0],
-            unlockedCars: cars_1.Cars.models.slice(0),
-            unlockedColors: unlockedColors,
+            color: color_palette_1.ColorPalette.colors[Math.floor(Math.random() * color_palette_1.ColorPalette.colors.length)],
             statsTotalGamesPlayed: 0,
             statsBestWPM: 0
         };
     }
 }
-exports.TOSClient = TOSClient;
 TOSClient._uuidGen = new uid_1.UID(16);
+exports.TOSClient = TOSClient;

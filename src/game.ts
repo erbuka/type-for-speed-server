@@ -85,7 +85,6 @@ export class TOSGame {
                     name: c.client.profile.displayName,
                     color: c.client.profile.color,
                     avatar: c.client.profile.avatar,
-                    carModel: c.client.profile.carModel,
                     position: c.position
                 }
             }),

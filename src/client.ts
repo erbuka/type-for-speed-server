@@ -4,7 +4,6 @@ import { TOSRoom } from './room';
 import * as WebSocket from 'ws';
 import { DB } from './services/database';
 import { ColorPalette } from './services/color-palette';
-import { Cars } from './services/cars';
 import { NameGenerator } from './util/name-generator';
 
 export interface ITOSClientSubscription {
@@ -26,9 +25,6 @@ export class TOSClient {
                 avatar: this._profileInternal.avatar,
                 color: this._profileInternal.color,
                 facebookId: this._profileInternal.facebookId,
-                carModel: this._profileInternal.carModel,
-                unlockedCars: this._profileInternal.unlockedCars.slice(0),
-                unlockedColors: this._profileInternal.unlockedColors.slice(0),
 
                 statsTotalGamesPlayed: this._profileInternal.statsTotalGamesPlayed,
                 statsBestWPM: this._profileInternal.statsBestWPM
@@ -112,16 +108,12 @@ export class TOSClient {
 
     static createDefaultProfile(r: IConnectRequestData): IProfile {
 
-        let unlockedColors = ColorPalette.colors.slice(0);
 
         return {
             facebookId: r.facebookId,
             displayName: NameGenerator.generate(),
             avatar: r.avatar,
-            color: unlockedColors[Math.floor(Math.random() * unlockedColors.length)],
-            carModel: Cars.models[0],
-            unlockedCars: Cars.models.slice(0),
-            unlockedColors: unlockedColors,
+            color: ColorPalette.colors[Math.floor(Math.random() * ColorPalette.colors.length)],
 
             statsTotalGamesPlayed: 0,
             statsBestWPM: 0

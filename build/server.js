@@ -1,10 +1,9 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -19,7 +18,6 @@ const matchmaker_1 = require("./matchmaker");
 const client_1 = require("./client");
 const text_broker_1 = require("./services/text-broker");
 const database_1 = require("./services/database");
-const cars_1 = require("./services/cars");
 const color_palette_1 = require("./services/color-palette");
 const game_1 = require("./game");
 const MM_PLAYER_COUNT = 4;
@@ -81,7 +79,6 @@ class TOSServer {
             this.stop();
             yield text_broker_1.TextBroker.initialize();
             yield database_1.DB.initialize();
-            yield cars_1.Cars.initialize();
             yield color_palette_1.ColorPalette.initialize();
             this._wsServer = new WebSocket.Server({ server: this._httpServer });
             this._wsServer.on("connection", socket => this.accept(socket));
@@ -159,14 +156,9 @@ class TOSServer {
         try {
             let responseData = {};
             if (data.color && typeof data.color === "string") {
-                if (client.profile.unlockedColors.indexOf(data.color) == -1)
-                    throw ("Color is locked");
+                if (color_palette_1.ColorPalette.colors.indexOf(data.color) == -1)
+                    throw ("Not a valid color");
                 responseData.color = data.color;
-            }
-            if (data.carModel && typeof data.carModel === "string") {
-                if (client.profile.unlockedCars.indexOf(data.carModel) == -1)
-                    throw ("Car is locked");
-                responseData.carModel = data.carModel;
             }
             if (data.displayName && typeof data.displayName === "string") {
                 if (!com_interface_1.namePattern.test(data.displayName.trim()))
@@ -266,7 +258,6 @@ class TOSServer {
             data: {
                 id: client.id,
                 profile: client.profile,
-                carModelsPool: cars_1.Cars.models,
                 colorPalette: color_palette_1.ColorPalette.colors
             }
         });
