@@ -104,5 +104,5 @@ class TOSClient {
         };
     }
 }
-TOSClient._uuidGen = new uid_1.UID(16);
 exports.TOSClient = TOSClient;
+TOSClient._uuidGen = new uid_1.UID(16);
