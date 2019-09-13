@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Type for Speed</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css"></head>
+
+<body>
+  <app-root>
+    <style>
+      .loading-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .loading-container .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .lds-grid {
+        display: inline-block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+      }
+
+      .lds-grid div {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #666;
+        animation: lds-grid 1.2s linear infinite;
+      }
+
+      .lds-grid div:nth-child(1) {
+        top: 6px;
+        left: 6px;
+        animation-delay: 0s;
+      }
+
+      .lds-grid div:nth-child(2) {
+        top: 6px;
+        left: 26px;
+        animation-delay: -0.4s;
+      }
+
+      .lds-grid div:nth-child(3) {
+        top: 6px;
+        left: 45px;
+        animation-delay: -0.8s;
+      }
+
+      .lds-grid div:nth-child(4) {
+        top: 26px;
+        left: 6px;
+        animation-delay: -0.4s;
+      }
+
+      .lds-grid div:nth-child(5) {
+        top: 26px;
+        left: 26px;
+        animation-delay: -0.8s;
+      }
+
+      .lds-grid div:nth-child(6) {
+        top: 26px;
+        left: 45px;
+        animation-delay: -1.2s;
+      }
+
+      .lds-grid div:nth-child(7) {
+        top: 45px;
+        left: 6px;
+        animation-delay: -0.8s;
+      }
+
+      .lds-grid div:nth-child(8) {
+        top: 45px;
+        left: 26px;
+        animation-delay: -1.2s;
+      }
+
+      .lds-grid div:nth-child(9) {
+        top: 45px;
+        left: 45px;
+        animation-delay: -1.6s;
+      }
+
+      @keyframes lds-grid {
+
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.5;
+        }
+      }
+    </style>
+    <div class="loading-container">
+      <div class="loader">
+        <div class="lds-grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </app-root>
+<script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="runtime-es2015.js" type="module"></script><script src="main-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="main-es5.js" nomodule defer></script></body>
+
+</html>
