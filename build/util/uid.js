@@ -26,6 +26,7 @@ class UID {
         return result;
     }
 }
+exports.UID = UID;
 UID._map = [
     "0", "1",
     "2", "3",
@@ -36,4 +37,3 @@ UID._map = [
     "C", "D",
     "E", "F"
 ];
-exports.UID = UID;

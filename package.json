@@ -10,16 +10,16 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "ejs": "^2.6.1",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "lokijs": "^1.5.6",
-    "ws": "^7.1.2"
+    "lokijs": "^1.5.8",
+    "ws": "^7.2.3"
   },
   "devDependencies": {
-    "@types/express": "^4.17.1",
-    "@types/lokijs": "^1.5.2",
-    "@types/node": "^12.7.5",
-    "@types/ws": "^6.0.3",
-    "typescript": "^3.6.3"
+    "@types/express": "^4.17.3",
+    "@types/lokijs": "^1.5.3",
+    "@types/node": "^12.12.30",
+    "@types/ws": "^7.2.3",
+    "typescript": "^3.8.3"
   }
 }

@@ -23,5 +23,5 @@ class DB {
         });
     }
 }
-DB._db = null;
 exports.DB = DB;
+DB._db = null;
