@@ -1,0 +1,9 @@
+<div class="tos-error-dialog" (click)="dismissEvent.emit()">
+  <div class="tos-error-dialog-content bg-dark text-light shadow p-3 rounded" (click)="$event.stopPropagation()">
+    <h3 class="text-danger mb-2">Oops!</h3>
+    <div class="tos-message">{{message}}</div>
+    <div class="text-right">
+      <button class="btn btn-outline-primary" (click)="dismissEvent.emit()">Close</button>
+    </div>
+  </div>
+</div>

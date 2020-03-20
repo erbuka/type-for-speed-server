@@ -1,0 +1,63 @@
+$circle_size: 48px;
+@keyframes blip {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tos-room-lobby-row {
+    td {
+        height: 80px;
+        vertical-align: middle;
+    }
+    .tos-ready {
+        width: $circle_size/2;
+        height: $circle_size/2;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: var(--gray);
+        vertical-align: middle;
+        transition: all 0.2s;
+    }
+    .tos-ready.tos-true {
+        background-color: var(--green);
+        box-shadow: 0px 0px 5px 2px var(--green);
+    }
+    .tos-profile-image {
+        width: $circle_size;
+        height: $circle_size;
+    }
+}
+
+.tos-invite-link {
+    .tos-copy {
+        display: none;
+        cursor: pointer;
+    }
+    .tos-copy.tos-blip {
+        display: inline-block;
+        color: var(--dark);
+        animation: blip 0.5s 1 0s ease;
+    }
+}
+
+.tos-invite-link:hover {
+    .tos-copy {
+        display: inline-block;
+    }
+    .tos-copy:hover {
+        color: var(--dark);
+    }
+}

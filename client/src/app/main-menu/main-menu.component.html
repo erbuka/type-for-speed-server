@@ -1,0 +1,34 @@
+<div class="tos-screen">
+  <div class="tos-container-small tos-middle">
+    <div class="tos-main-menu" *ngIf="currentSection === 0">
+      <div class="tos-main-menu-item mb-2" (click)="practice()">
+        <div class="tos-menu-text display-4 tos-text-shadow">Practice</div>
+        <div class="tos-menu-description">Practice by yourself in single player mode</div>
+      </div>
+      <div class="tos-main-menu-item mb-2" (click)="currentSection = 1">
+        <div class="tos-menu-text display-4 tos-text-shadow">Custom game</div>
+        <div class="tos-menu-description">Create a game room and race against your friends</div>
+      </div>
+      <div class="tos-main-menu-item mb-2" (click)="quickMatch()">
+        <div class="tos-menu-text display-4 tos-text-shadow">Quick match</div>
+        <div class="tos-menu-description">Race against 4 random players</div>
+      </div>
+      <div class="tos-main-menu-item mb-2" (click)="context.gotoScreenAsync(6)">
+        <div class="tos-menu-text display-4 tos-text-shadow">Profile</div>
+        <div class="tos-menu-description">Customize your profile</div>
+      </div>
+    </div>
+
+    <div class="tos-custom-game" *ngIf="currentSection === 1">
+      <div class="display-4 text-light tos-text-shadow mb-2">Custom game</div>
+      <div class="d-flex mb-2">
+        <input class="custom-range p-2" type="range" min="1" max="4" [(ngModel)]="playersCount">
+        <div style="width: 7rem" class="ml-2">{{ playersCountText }}</div>
+      </div>
+      <div class="text-right">
+        <button class="btn btn-outline-primary btn-standard" (click)="currentSection = 0">Leave</button>
+        <button class="btn btn-outline-primary btn-standard ml-2" (click)="createRoom()">Create room</button>
+      </div>
+    </div>
+  </div>
+</div>

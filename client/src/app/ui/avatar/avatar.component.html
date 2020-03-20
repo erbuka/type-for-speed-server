@@ -1,0 +1,8 @@
+<div>
+    <span class="text-light">{{ initials | uppercase }}</span>
+    <div
+        *ngIf="avatarURL" 
+        [ngStyle]="{ 'background-image' : 'url(' + avatarURL + ')' }"
+        class="tos-avatar-image">
+    </div>
+</div>

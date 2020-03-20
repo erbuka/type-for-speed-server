@@ -1,0 +1,10 @@
+.tos-scores-table {
+    td, th {
+        vertical-align: middle;
+    }
+
+    td.tos-small, th.tos-small  {
+        width: 1px;
+        white-space: nowrap;
+    }
+}

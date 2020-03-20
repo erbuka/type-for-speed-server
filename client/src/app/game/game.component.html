@@ -1,0 +1,20 @@
+<div class="tos-screen">
+    <!--
+    <app-dom-game-renderer [game]="game" class="mb-3"></app-dom-game-renderer>
+    -->
+    <div *ngIf="game" class="container tos-bottom">
+        <div class="tos-text my-3">
+            <div class="tos-word" *ngFor="let word of game.text; index as i" [class.tos-highlight]="position === i">{{
+                word }}</div>
+            <div class="text-right font-italic">
+                {{ game.textSource }}
+            </div>
+        </div>
+
+        <app-word-typing-area class="my-2 p-2 display-4 text-center text-light tos-word-typing-area" [enabled]="game.state.started"
+            [checkAgainst]="nextWord" (wordTyped)="onWordTyped($event)"></app-word-typing-area>
+
+    </div>
+    <div @gameMessage class="text-light tos-middle tos-game-message display-1 tos-faster-one tos-text-shadow-5" *ngIf="message">{{
+        message }}</div>
+</div>

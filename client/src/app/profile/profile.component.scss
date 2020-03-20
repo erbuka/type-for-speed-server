@@ -1,0 +1,36 @@
+$color-size: 2.5rem;
+.tos-color-selection-container {
+  .tos-color {
+    position: relative;
+    width: $color-size;
+    height: $color-size;
+    border-radius: 50%;
+    overflow: hidden;
+
+    cursor: pointer;
+    &:hover {
+      .tos-hover-circle {
+        opacity: 1;
+      }
+    }
+
+    .tos-selected-icon {
+      display: none;
+    }
+    .tos-hover-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: $color-size/10 solid var(--light);
+      opacity: 0;
+      transition: all 0.2s;
+    }
+
+    &.tos-selected {
+      .tos-selected-icon {
+        display: block;
+      }
+    }
+  }
+}

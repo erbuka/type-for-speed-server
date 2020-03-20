@@ -1,0 +1,38 @@
+<div class="tos-screen">
+  <div class="tos-main tos-dark container">
+    <div class="display-4 tos-text-shadow text-light">Room #{{ roomInfo.roomId }}</div>
+    <div class="d-flex flex-row align-items-center mb-2">
+      <div class="p-2">Invite Link</div>
+      <div class="p-2 rounded text-secondary tos-invite-link">
+        {{inviteLink}}
+        <span #copyLinkRef class="tos-copy" (click)="copyLink()"><i class="far fa-copy"></i></span>
+      </div>
+    </div>
+    <table class="table table-dark shadow">
+      <thead>
+        <tr class="tos-room-lobby-row">
+          <th>Player</th>
+          <th class="text-right">Ready</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tos-room-lobby-row" *ngFor="let c of roomInfo.clients; trackBy clientTrackBy">
+          <td class="d-flex flex-row align-items-center">
+            <app-avatar [name]="c.name" [color]="c.color" [url]="c.avatar" class="mr-2 border border-light rounded-circle shadow"></app-avatar>
+            <div>{{ c.name }}</div>
+          </td>
+          <td class="text-right">
+            <div class="tos-ready" [class.tos-true]="c.ready"></div>
+          </td>
+        </tr>
+        <tr class="tos-room-lobby-row" *ngFor="let e of emptySpots">
+          <td colspan="3" class="font-italic">Waiting for players...</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button type="button" class="btn btn-outline-primary btn-standard mr-2" (click)="toggleReady()">Ready</button>
+      <button type="button" class="btn btn-outline-primary btn-standard" (click)="leaveRoom()">Leave</button>
+    </div>
+  </div>
+</div>

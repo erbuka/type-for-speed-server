@@ -1,0 +1,13 @@
+<app-three-game-renderer class="tos-screen" @slide [game]="currentGame"></app-three-game-renderer>
+<app-login class="tos-screen" @slide *ngIf="currentScreen === 0"></app-login>
+<app-main-menu class="tos-screen" @slide *ngIf="currentScreen === 1"></app-main-menu>
+<app-room-lobby class="tos-screen" @slide *ngIf="currentScreen === 2" [roomInfo]="currentRoom"></app-room-lobby>
+<app-game class="tos-screen" @slide *ngIf="currentScreen === 3" [game]="currentGame"></app-game>
+<app-score class="tos-screen" @slide *ngIf="currentScreen === 4" [score]="currentScore" (back)="onScoreBack()"></app-score>
+<app-matchmaking class="tos-screen" @slide *ngIf="currentScreen === 5"></app-matchmaking>
+<app-profile class="tos-screen" @slide *ngIf="currentScreen === 6"></app-profile>
+
+<app-error-dialog @fade *ngIf="errorMessage" [message]="errorMessage" (dismiss)="errorMessage = null"></app-error-dialog>
+
+<div class="tos-app-version p-2">v{{ appVersion }}</div>
+

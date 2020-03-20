@@ -1,0 +1,13 @@
+.tos-main-menu {
+    .tos-main-menu-item {
+        .tos-menu-text {
+            cursor: pointer;
+            transition: all 0.2s;
+            transform-origin: 0% 50%;
+            color: var(--light);
+            &:hover {
+                transform: scale(1.2, 1.2);
+            }
+        }
+    }
+}

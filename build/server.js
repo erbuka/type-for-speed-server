@@ -36,7 +36,7 @@ class TOSServer {
         this._httpServer = http.createServer(this._expressApp);
         this._expressApp.engine("ejs", ejs.renderFile);
         this._expressApp.set("views", "./views");
-        this._expressApp.use(express.static("./client"));
+        this._expressApp.use(express.static("./client/dist"));
         this._expressApp.get("/admin*", (req, res, next) => {
             let authorization = req.headers["authorization"];
             if (!authorization || authorization !== this.auth) {

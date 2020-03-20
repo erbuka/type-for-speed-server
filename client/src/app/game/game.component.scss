@@ -1,0 +1,18 @@
+.tos-text {
+    .tos-word {
+        display: inline-block;
+        padding: 4px;
+    }
+    .tos-word.tos-highlight {
+        background-color: var(--dark);
+        color: var(--light);
+    }
+}
+
+.tos-game-message {
+    white-space: nowrap;
+}
+
+.tos-word-typing-area {
+    background-color: var(--gray-dark);
+}

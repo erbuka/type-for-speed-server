@@ -31,7 +31,7 @@ export class TOSServer {
         this._expressApp.engine("ejs", ejs.renderFile);
         this._expressApp.set("views", "./views");
 
-        this._expressApp.use(express.static("./client"));
+        this._expressApp.use(express.static("./client/dist"));
 
         this._expressApp.get("/admin*", (req, res, next) => {
             let authorization = req.headers["authorization"];
@@ -44,6 +44,8 @@ export class TOSServer {
             }
         })
 
+
+
         this._expressApp.get("/admin", (req, res) => {
             res.render("status.ejs", { server: this });
         });
@@ -54,6 +56,8 @@ export class TOSServer {
             this.stop();
             res.redirect("/admin");
         })
+
+
 
         this._httpServer.listen(this.port);
 

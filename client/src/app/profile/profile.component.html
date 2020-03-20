@@ -1,0 +1,35 @@
+<div class="tos-screen">
+  <div class="tos-main">
+    <div class="container mt-4">
+
+      <div class="display-4 mb-2 tos-text-shadow text-light mb-2">General</div>
+
+      <div class="tos-profile-general bg-dark text-light p-4 shadow mb-4">
+        <div class="d-flex align-items-center">
+          <span style="white-space: nowrap">Display name</span>
+          <input type="text" class="form-control ml-2" [class.border-light]="isDisplayNameValid()"
+            [class.border-danger]="!isDisplayNameValid()" [(ngModel)]="selectedDisplayName" />
+        </div>
+      </div>
+
+      <div class="display-4 mb-2 tos-text-shadow text-light">Select your color</div>
+
+      <div class="tos-color-selection-container bg-dark p-4 shadow d-flex flex-wrap mb-2">
+        <div class="tos-color m-1" *ngFor="let color of clientService.colorPalette" [style.background-color]="color"
+          [class.tos-selected]="selectedColor === color" (click)="selectedColor = color">
+          <div class="tos-selected-icon tos-middle">
+            <i class="fas fa-check tos-light-text-shadow"></i>
+          </div>
+          <div class="tos-hover-circle"></div>
+        </div>
+      </div>
+
+      <div class="text-right mb-2">
+        <button type="button" class="btn btn-outline-primary btn-standard"
+          (click)="context.gotoScreenAsync(1)">Cancel</button>
+        <button type="button" class="btn btn-outline-primary btn-standard ml-2" (click)="saveProfile()">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>

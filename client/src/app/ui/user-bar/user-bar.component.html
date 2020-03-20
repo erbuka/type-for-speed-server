@@ -1,0 +1,23 @@
+<div class="tos-user-bar-container">
+  <div class="d-flex flex-row-reverse align-items-center">
+    <app-avatar class="tos-show-profile rounded-circle border border-light" 
+      (click)="profileVisible=!profileVisible"
+      [color]="clientService.color"
+      [name]="clientService.name" 
+      [url]="clientService.avatar"></app-avatar>
+  </div>
+</div>
+<div class="tos-user-panel tos-dark shadow" *ngIf="profileVisible">
+  <div class="d-flex flex-row align-items-center p-2">
+    <app-avatar class="rounded-circle border border-light" 
+      [size]="48" 
+      [name]="clientService.name" 
+      [color]="clientService.color"
+      [url]="clientService.avatar"></app-avatar>
+    <div class="ml-2 flex-grow-1">{{clientService.name}}</div>
+  </div>
+  <div class="d-flex flex-row justify-content-between p-2">
+    <button class="btn btn-outline-primary flex-grow-1 mr-2" style="width: 100px">View profile</button>
+    <button class="btn btn-outline-primary flex-grow-1" style="width: 100px" (click)="clientService.disconnect()">Logout</button>
+  </div>
+</div>

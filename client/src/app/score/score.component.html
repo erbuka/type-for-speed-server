@@ -1,0 +1,33 @@
+<div class="tos-screen">
+  <div class="tos-main container">
+    <div class="display-4 tos-text-shadow text-light mb-2">Scores</div>
+    <table class="table table-dark tos-scores-table shadow">
+      <tr>
+        <th class="tos-small">Place</th>
+        <th>Player</th>
+        <th class="tos-small text-right">Time</th>
+        <th class="tos-small text-right">Accuracy</th>
+        <th class="tos-small text-right">WPM</th>
+      </tr>
+      <tr *ngFor="let score of score.scores; index as i">
+        <td>{{ (i+1) | appPosition }}</td>
+        <td>
+          <div class="d-flex flex-row align-items-center">
+            <app-avatar [name]="score.playerName" [color]="score.playerColor" [url]="score.playerAvatar" class="mr-2 shadow rounded-circle border border-light"></app-avatar>
+            <div>{{ score.playerName }}</div>
+          </div>
+        </td>
+        <td class="text-right">
+          {{score.time ? (score.time | appTime) : "N/A"}}
+        </td>
+        <td class="text-right">
+          {{score.accuracy ? (score.accuracy | number:'1.1-1') + "%" : "N/A"}}
+        </td>
+        <td class="text-right">
+          {{score.wordsPerMinute ? (score.wordsPerMinute | number:'1.1-1') : "N/A"}}
+        </td>
+      </tr>
+    </table>
+    <button type="button" class="btn btn-outline-primary btn-standard" (click)="backEvent.emit()">Go back</button>
+  </div>
+</div>
