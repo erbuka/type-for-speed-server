@@ -1,3 +1,7 @@
+# Type for Speed
+
+A multiplayer typeracing game.
+
 # Type for Speed - Server
 
 ## Run
@@ -32,3 +36,13 @@ Remember to configure your environment variables and also, if you have your own 
     * *data_sources* - Resources to generate assets
     * *views* - EJS views
     * *client* - Root folder of the client
+
+# Type for Speed - Client
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
