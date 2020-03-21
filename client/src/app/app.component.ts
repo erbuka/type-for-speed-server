@@ -6,7 +6,10 @@ import { LocationStrategy, Location, PathLocationStrategy } from '@angular/commo
 import { Utility } from './classes/utility';
 import { EAppScreen, ContextService } from './services/context.service';
 import { HttpClient } from '@angular/common/http';
-import { version as AppVersion } from 'package.json';
+//import { version as AppVersion } from 'package.json';
+
+
+const AppVersion = require("../../package.json").version;
 
 @Component({
   selector: 'app-root',
